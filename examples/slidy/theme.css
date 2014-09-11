@@ -1,0 +1,451 @@
+body {
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+   line-height: 1.25em;
+   color: #252c58
+}
+
+h1, h2, h3, h4, h5, figcaption, caption {
+   font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+   font-size: 1.25em;
+}
+
+h3 {
+    font-size: 0.825em;
+}
+
+.two-column > *{
+   float: left;
+   width: 43%;
+   margin-left: 3%;
+}
+
+.two-column > ul {
+   padding-left: 0em;
+   width: 43%;
+}
+
+.third {
+   float: left;
+   width: 30%;
+   margin-left: 2%;
+}
+
+ul {
+   padding-left: 1em;
+   margin-right: 0em;
+}
+
+li > p {
+   margin-left: 0em;
+   margin-right: 0em;
+}
+
+.slide.cover {
+   height: 100%;
+   background-color: rgb(255,255,255);
+}
+
+.slide.cover hgroup > h1 {
+   padding: 0em;
+   margin: 0em;
+}
+
+.slide.pretitle hgroup {
+   margin-top: 25%;
+   text-align: center;
+   font-weight: bold;
+   color: black;
+
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.slide.pretitle hgroup > h1 {
+   color: black;
+}
+
+.title hgroup {
+   text-align: center;
+   margin-top: 15%;
+}
+
+.title .author {
+   margin-top: 5%;
+   text-align: center;
+}
+
+.title .author p {
+   padding: 0em;
+   margin: 0em;
+   margin-bottom: 0.2em;
+}
+
+.title .dept {
+   margin-top: 5%;
+   text-align: center;
+   
+}
+
+.slide.title h1 {
+   color: black;
+}
+
+.background header {
+   padding: 0em;
+   margin: 0em;
+   width: 100%;
+   height: 5%;
+}
+
+/*
+.background header .logo {
+   display: inline-block;
+   height: 100%;
+}*/
+.background header {
+   height: 3em;
+   line-height: 3em;
+}
+.background header img.logo {
+   vertical-align: middle;
+   height: 2em;
+   margin-left: 1em;
+}
+.background .dept {
+   width: 250px;
+   position: fixed;
+   top: 90%;
+   left: 10px;
+   padding-top: 11px;
+   padding-right: 10px;
+}
+.background footer {
+   position: fixed;
+   bottom: 0px;
+   left: 0px;
+}
+
+div.background {
+   margin-top: 1em;
+}
+div.slide {
+   margin-top: 1em;
+   padding-left: 0em;
+   padding-right: 0em;
+}
+
+div.slide h1 {
+   margin-top: 0.25em;
+   margin-left: 100px;
+   margin-bottom: 0em;
+   vertical-align: middle;
+}
+
+div.slide h1 + * {
+   margin-top: 2em;
+}
+
+div.slide h1 + img, div.slide h1 + table {
+   margin-top: 1em;
+}
+
+div.slide > img, div.slide div > img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+blockquote.large, .slide > blockquote  {
+   font-size: 1.5em;
+   line-height: 1.25em;
+}
+
+blockquote.small {
+   font-size: 1em;
+   margin-left: 2em;
+   margin-right: 2em;
+}
+
+blockquote em {
+   font-weight: bold;
+}
+
+blockquote.callout {
+   text-align: center;
+}
+
+.dropcap {
+   float: left;
+   font-size: 2em;
+   line-height: 1em;
+}
+
+.dropcap.P {
+   margin-right: 0.0625em;
+}
+
+.dropcap.A {
+   margin-right: -0.125em;
+}
+
+figcaption {
+   text-align: center;
+   margin-top: 1em;
+}
+
+div.slide > figure > img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+}
+
+h2, h3, h4, h5 {
+   text-align: center;
+}
+
+.rdfa-value {
+   color: rgb(28, 167, 28);
+}
+
+.rdfa-property {
+   color: rgb(196, 42, 36);
+}
+
+#vortex img {
+    display: none;
+}
+#form {
+    width: 45%;
+    float: left;
+}
+
+#log {
+    font-family: monospace;
+    font-size: 10pt;
+    line-height: 1em;
+    max-height: 15em;
+    overflow: scroll;
+}
+
+#log p {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+#output {
+    width: 45%;
+    float: left;
+}
+
+#output {
+    text-align: center;
+}
+
+#map {
+    height: 500px;
+}
+
+#form input {
+   font-size: 0.5em;
+}
+
+#map-vortex {
+   height: 500px;
+}
+
+.slide pre {
+   font-weight: normal;
+   background-color: white; 
+   color: inherit; 
+   z-index: 10;
+}
+
+.slide pre .type {
+    color: red;
+}
+
+.slide pre .property, .slide pre .curie {
+    color: orange;
+}
+
+.slide pre .resource {
+    color: green;
+}
+
+.slide pre .object {
+    color: black;
+}
+
+.slide > img.aside {
+   float: right;
+   margin-right: 1em;
+   margin-top: 1em;
+}
+
+.slide > div {
+   margin-top: 1em;
+}
+
+.toolbar {
+   padding-bottom: 0.2em;
+   vertical-align: top;
+}
+
+.slide > img {
+   margin-top: 1em;
+}
+
+.slide > img.fill {
+   margin-top: 0em;
+   width: 100%;
+}
+
+.slide > img.fill-height {
+   margin-top: 0em;
+   height: 80%;
+}
+
+p.small {
+   font-size: 16pt;
+}
+
+blockquote address {
+   margin-top: -0.5em;
+   text-align: right;
+}
+
+.partition1 {
+   color: red;
+}
+
+.partition2 {
+   color: orange;
+}
+
+.partition3 {
+   color: green;
+}
+
+div.slide dt {
+   float: left;
+   clear: left;
+   height: 5em;
+   
+   margin-top: 0em;
+   margin-right: 1em;
+}
+
+div.slide dt img {
+   height: 5em;
+}
+
+div.slide dd {
+   height: 5em;
+   display: table;
+}
+div.slide dd p {
+   display: table-cell;
+   vertical-align: middle;
+}
+
+div.slide dl + * {
+   clear: both;
+}
+
+.top-left-quadrant {
+   position: absolute;
+   top: 3%;
+   left:5%;
+   z-index: 10;
+}
+
+.top-right-quadrant {
+   position: absolute;
+   top: 3%;
+   right:5%;
+   z-index: 10;
+}
+
+.bottom-left-quadrant {
+   position: absolute;
+   bottom: 5%;
+   left:5%;
+   z-index: 10;
+}
+
+.bottom-right-quadrant {
+   position: absolute;
+   bottom: 5%;
+   right:5%;
+   z-index: 10;
+}
+
+.annotation {
+   font-weight: bold;
+}
+.annotation.large {
+   font-size: 1.25em;
+}
+
+table {
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+table td, table th {
+   text-align: center;
+}
+
+table td {
+   background-color: rgb(245,245,245);
+}
+
+svg {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.indent {
+   margin-left: 5em;
+}
+
+.indent2 {
+   margin-left: 10em;
+}
+
+.indent3 {
+   margin-left: 15em;
+}
+
+.indent4 {
+   margin-left: 20em;
+}
+
+.indent5 {
+   margin-left: 25em;
+}
+
+p > button, li > button {
+   font-size: 1em;
+}
+
+p > a:link {
+   text-decoration: underline;
+}
+
+.clear {
+   clear: both;
+}
+
+em.large {
+   font-size: 1.25em;
+}
+
