@@ -1,0 +1,13 @@
+/* content */
+
+#container {
+	margin: 40px auto;
+	overflow: hidden;
+	width: 800px;
+}
+
+.column {
+	float: left;
+	width: 200px;
+}
+
