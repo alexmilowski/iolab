@@ -1,16 +1,16 @@
 $(document).ready(function() {
+})
+
+function getLatestData() {
     var request = $.getJSON(
         "http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_hour.geojson",
         function(data) {
-            showData(data);
+            buildTable(data);
         }
     );
-})
+}
 
-function showData(data) {
-    console.log("minimum longitude: " + data.bbox[0] + ", ");
-    console.log("minimum latitude: " + data.bbox[1] + ", ");
-    console.log("minimum depth: " + data.bbox[2]);
+function buildTable(data) {
     for (var i = 0; i < data.features.length; i++) {
         var record = $("<tr></tr>")
             .append("<td>" + data.features[i].properties.place + "</td>")

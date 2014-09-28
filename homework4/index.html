@@ -14,8 +14,9 @@
 <body>
 <div id="container">
   <h1>Earthquake</h1>
-  <p>The US Geological Survey (USGS) provides earthquake monitoring data for the world on the web as a variety of web services. In this assignment, we'll be accessing that and providing a simple tabular view of the contained data. In subsequent assignments, we'll attempt to visualize this data on a map.</p>
-  <table class="table">
+  <p>This page shows the information about earthquakes happened within an hour. The data is obtained from US Geological Survey.</p>
+  <button id="GetData" type="button" class="btn btn-primary" onclick="getLatestData()">Get Latest Data</button>
+  <table id="DataTable" class="table table-striped">
     <tr>
       <th>Place</th>
       <th>Time</th>
