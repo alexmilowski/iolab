@@ -22,7 +22,6 @@ function buildTable(data) {
             .append("<td>" + nullChecker(data.features[i].properties.tsunami) + "</td>")
         $(".table").append(record);
     }
-    console.dir(data.features[1].properties);
 }
 
 // Check whether the given value is null or not
