@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.xproclet.org/V/Server/" xmlns:xproc="http://www.xproclet.org/V/XProc/">
+   
+   <client protocol="CLAP"/>
+   <client protocol="RIAP"/>
+   <client protocol="FILE"/>
+   <client protocol="HTTP"/>
+   <client protocol="HTTPS"/>
+
+   <include href="xproclet/modules/mod-xproc/mod-xproc.xml"/>
+   
+   <!-- This is an internal route that provides the content to the application.  Change
+        the content element to switch over to the plays with namespaces.  Just make 
+        sure to comment out the other one. -->
+   <application name="shakespeare">
+      <!-- Namespace
+      <content match="/" href="../shakespeare/ns/">
+         <parameter name="method" value="GET"/>
+         <parameter name="method" value="HEAD"/>
+      </content>
+      -->
+      <content match="/" href="../shakespeare/">
+         <parameter name="method" value="GET"/>
+         <parameter name="method" value="HEAD"/>
+      </content>
+   </application>
+   
+   <!-- This is the main server configuration -->
+   <server protocol="HTTP" address="*" port="8080">
+      <host name="localhost">
+         <attribute name="xproc.cache" ref="xproc.cache"/>
+         
+         <!-- This is the route that matches the server root -->
+         <route match="/" mode="equals" ref="xproclet">
+            <attribute name="xproc.configuration">
+               <xproc:method name="GET" href="index.xpl" output-type="application/xhtml+xml">
+                  <xproc:option name="base" value="riap://component/shakespeare/"/>
+               </xproc:method>
+            </attribute>
+         </route>
+         
+         <!-- This is the route that matches the play -->
+         <route match="/{play}/" mode="equals" ref="xproclet">
+            <attribute name="xproc.configuration">
+               <xproc:method name="GET" href="play.xpl" output-type="application/xhtml+xml">
+                  <xproc:option name="base" value="riap://component/shakespeare/"/>
+                  <xproc:option name="play" source="attributes"/>
+               </xproc:method>
+            </attribute>
+         </route>
+         
+      </host>
+   </server>
+</component>
+      
+   

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<define xmlns="http://www.xproclet.org/V/Server/" name="login" clasd="org.xproclet.login.LoginApplication">
+   <library href="mod-login.jar"/>   
+</define>

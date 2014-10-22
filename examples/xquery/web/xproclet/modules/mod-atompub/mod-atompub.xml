@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.xproclet.org/V/Server/">
+<define name="atompub" ref="xproc">
+   <library href="mod-atompub.jar"/>   
+   <library href="lib/aws-java-sdk-1.2.7.jar"/>   
+</define>
+</component>

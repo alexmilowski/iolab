@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.xproclet.org/V/Server/">
+<define name="xproc" class="org.xproclet.xproc.XProcResource">
+   <library href="mod-xproc.jar"/>   
+   <library href="lib/calabash.jar"/>   
+   <library href="lib/commons-codec-1.6.jar"/>
+   <library href="lib/commons-io-1.3.1.jar"/>
+   <library href="lib/commons-logging-1.1.1.jar"/>
+   <library href="lib/httpclient-4.2.5.jar"/>
+   <library href="lib/httpcore-4.2.4.jar"/>
+   <library href="lib/httpmime-4.2.5.jar"/>
+   <library href="lib/saxon9he.jar"/>
+   <library href="lib/xmlresolver.jar"/>
+   <library href="lib/marklogic-xcc-7.0.2.jar"/>
+</define>
+<define name="xproc.cache" class="org.xproclet.xproc.XProcCache" ref="xproc"/>
+<define name="xproclet" class="org.xproclet.xproc.XProcRestlet" ref="xproc"/>
+</component>
