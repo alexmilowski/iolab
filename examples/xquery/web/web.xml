@@ -30,6 +30,11 @@
       <host name="localhost">
          <attribute name="xproc.cache" ref="xproc.cache"/>
          
+         <content match="/resources/" href="resources/">
+            <parameter name="method" value="GET"/>
+            <parameter name="method" value="HEAD"/>
+         </content>
+         
          <!-- This is the route that matches the server root -->
          <route match="/" mode="equals" ref="xproclet">
             <attribute name="xproc.configuration">

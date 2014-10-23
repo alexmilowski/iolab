@@ -10,7 +10,7 @@
    <p:xquery>
       <p:input port="parameters"><p:empty/></p:input>
       <p:input port="query">
-         <p:data wrapper="c:query" href="index.xq" content-type="text/plain"/>
+         <p:data wrapper="c:query" href="play.xq" content-type="text/plain"/>
       </p:input>
    </p:xquery>
 </p:declare-step>
