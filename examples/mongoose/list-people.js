@@ -10,7 +10,11 @@ db.once('open', function callback () {
    var deferred = Q.defer();
    
    db.model("Person").find(function(err,personList) {
-      if (err) return console.log(err);
+      if (err) {
+         console.log(err);
+         deferred.resolve();
+         return;
+      }
       console.log(personList)
       deferred.resolve();
    })
