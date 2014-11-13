@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>A Test Application</title>
+      <script type="text/javascript" src="getuser.js"/>
+      <script type="text/javascript">
+window.addEventListener("load",function() {
+
+   //var userFetch = new UserFetch("http://localhost:5000/");
+   var userFetch = new UserFetch("http://localhost:8000/");
+   document.getElementById("get").onclick = function() {
+      document.getElementById("output").innerHTML = "";
+      var userid = document.getElementById("userid").value
+      userFetch.fetch(userid,
+         function(status,data) {
+            if (status==404) {
+               alert("Not found!");
+               return;
+            }
+            if (status!=200) {
+               alert("Error: "+status);
+               return;
+            }
+            document.getElementById("output").innerHTML = JSON.stringify(data);
+         }
+      );
+   };
+   
+},false);
+         
+      </script>
+   </head>
+   <body>
+    <p><label for="userid">User</label> <input id="userid"/> <button id="get">Get</button></p>
+    <pre id="output">
+    </pre>
+   </body>
+</html>
