@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign in example for IOLAB">
+    <meta name="author" content="Ramit Malhotra">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signup example</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!--Font-Awesome CSS-->
+    <link href="../static/dist/css/font-awesome.css" rel="stylesheet">
+    
+    <!--Bootstrap Social CSS-->
+    <link href="../static/dist/css/docs.css" rel="stylesheet">
+    <link href="../static/dist/css/bootstrap-social.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this -->
+    <link href="../static/dist/css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">    
+      <form id="myform" class="form-signin" role="form" method="post" action="register">
+      {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+    	<ul class=flashes>
+	    {% for message in messages %}
+    	  <li>{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+	{% endwith %}
+        <h2 class="form-signin-heading">Sign Up!</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="inputPasswordTwo" class="sr-only">Re-enter Password</label>
+        <input type="password" name="inputPasswordTwo" id="inputPasswordTwo" class="form-control" placeholder="Re-Enter Password" required>
+        <label for="secretQuestion" class="sr-only">Secret Question</label>
+        <input type="text" name="secretQuestion" id="secretQuestion" class="form-control" placeholder="Secret Question" required>
+        <label for="secretAnswer" class="sr-only">Answer</label>
+        <input type="text" name="secretAnswer" id="secretAnswer" class="form-control" placeholder="Answer" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <div class="form-group">
+      	<div class="btn-group btn-group-justified form-control-static">
+        	<a class="btn btn-link btn-xs ellipsis" href="/">Already have an account?</a>
+    	</div>
+	  </div>
+	</form>       
+	<div class="form-signin">   
+		<legend class="text-muted text-center">or</legend>
+    	    <div class="text-center">
+        	    <a class="btn btn-block btn-social btn-google-plus" href="google" title="Sign in with Google" rel="nofollow">
+    				<i class="fa fa-google-plus"></i>Sign in with Google
+	    		</a>
+	    		<a class="btn btn-block btn-social btn-facebook" title="Sign in with Facebook" rel="nofollow">
+            		<i class="fa fa-facebook"></i> Sign in with Facebook
+	            </a>
+    		</div>
+    </div>		
+    </div> 
+    <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		//callback handler for form submit
+		$(document).ready(function(){
+		 	var bool=false;				
+			$("#myform").submit(function(e)
+				{
+		    	var postData = $("form").serialize();
+			    console.log(postData);
+			    var formURL = $(this).attr("action");			    			
+			    var ip = $("#inputPassword").val();
+			    if(ip.length < 6){
+			    	alert("Password must be minimum of 6 characters!");
+			    	bool=false;
+			    	}
+			    else{	
+					var ip2 = $("#inputPasswordTwo").val();	
+					if(ip != ip2){
+						alert("Passwords must match");
+						bool = false;
+						}
+					else bool = true;
+					}
+				if(bool == true){
+					$.ajax(
+				    {
+		        	url : formURL,
+	        		type: "POST",
+			        data : postData,
+        			success:function(data, textStatus, jqXHR) 
+        				{
+        				if(data['status'] == "success"){
+	        				alert("Congrats! You are registred. You can now sign in!");
+    	    				window.location.href= "/";
+    	    				}
+    	    			else{
+    	    				alert("Alas! This user already exists! Try with another email address!");	
+    	    				}
+        				},
+        				
+			        error: function(jqXHR, textStatus, errorThrown) 
+    	    			{
+						alert("Alas! This user already exists! Try with another email address!");						
+        				}
+				    });
+				    }
+				    e.preventDefault(); //STOP default action
+				    //e.unbind(); //unbind. to stop multiple form submit.			    
+			});
+			
+		});
+	</script>
+  </body>
+</html>
